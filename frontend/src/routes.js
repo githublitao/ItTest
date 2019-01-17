@@ -20,7 +20,7 @@ let routes = [
         name: '',
         projectHidden: true,
         children: [
-            { path: '/blackList', component: blackList, iconCls:'el-icon-bell', name: '先人指路'},
+            // { path: '/blackList', component: blackList, iconCls:'el-icon-bell', name: '先人指路'},
             { path: '/FeedView', component: FeedView, iconCls:'el-icon-message', name: '金玉良言'},
             { path: '/Resource', component: Links, iconCls:'el-icon-share', name: '无私奉献'},
             { path: '/About', component: About, iconCls:'el-icon-info', name: '关于我们'},
