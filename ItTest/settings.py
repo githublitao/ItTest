@@ -84,6 +84,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'blackList',
+    'rest_framework_swagger',
 ]
 
 MIDDLEWARE = [
@@ -99,6 +100,15 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ItTest.urls'
+
+SWAGGER_SETTINGS = {
+    # 基础样式
+    'SECURITY_DEFINITIONS': {
+        "basic":{
+            'type': 'basic'
+        }
+    },
+}
 
 TEMPLATES = [
     {
@@ -134,8 +144,8 @@ DATABASES = {
         'NAME': 'test',
         'USER': 'root',
         'PASSWORD': '123456',
-        # 'HOST': '172.16.153.83',
-        'HOST': '47.98.49.70',
+        # 'HOST': '47.99.132.169',
+        'HOST': '172.16.82.115',
         'PORT': '3306',
     }
 }

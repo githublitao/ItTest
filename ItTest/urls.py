@@ -17,11 +17,17 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from rest_framework.schemas import get_schema_view
+from rest_framework_swagger.renderers import OpenAPIRenderer, SwaggerUIRenderer
 
 from blackList import urls
 
+schema_view = get_schema_view(title='群站点 API', renderer_classes=[OpenAPIRenderer, SwaggerUIRenderer]
+                              , permission_classes=())
 urlpatterns = [
+    url(r'^docs/', schema_view, name="docs"),
     path('admin/', admin.site.urls),
     url(r'^$', TemplateView.as_view(template_name="index.html")),
     url(r'^api/', include(urls)),
+    url(r'^api-auth/',include('rest_framework.urls',namespace='rest_framework'))
 ]
